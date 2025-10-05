@@ -3,7 +3,7 @@ package public
 import (
 	"encoding/json"
 
-	"github.com/iaping/go-okx/ws"
+	"github.com/forwardalex/go-okx/ws"
 )
 
 type HandlerIndexTickers func(EventIndexTickers)
