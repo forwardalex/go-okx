@@ -34,6 +34,12 @@ func (p *Public) Subscribe(args interface{}, handler ws.Handler, handlerError ws
 	return p.C.Operate(subscribe, nil)
 }
 
+// subscribes
+func (p *Public) Subscribes(argss []interface{}, handler ws.Handler, handlerError ws.HandlerError) error {
+	subscribe := ws.NewOperateSubscribes(argss, handler, handlerError)
+	return p.C.Operate(subscribe, nil)
+}
+
 // unbscribe
 func (p *Public) UnSubscribe(args interface{}) error {
 	unsubscribe := ws.NewOperationUnSubscribe(args)

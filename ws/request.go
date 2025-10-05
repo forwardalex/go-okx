@@ -16,6 +16,11 @@ func NewRequestSubscribe(args interface{}) *Request {
 	return NewRequest(OpSubscribe, args)
 }
 
+// new request for subscribe
+func NewRequestSubscribes(args []interface{}) *Request {
+	return NewRequets(OpSubscribe, args)
+}
+
 func NewRequestUnSubscribe(args interface{}) *Request {
 	return NewRequest(OpUnsubscribe, args)
 }
@@ -30,5 +35,12 @@ func NewRequest(op string, args interface{}) *Request {
 	return &Request{
 		Op:   op,
 		Args: []interface{}{args},
+	}
+}
+
+func NewRequets(op string, args []interface{}) *Request {
+	return &Request{
+		Op:   op,
+		Args: args,
 	}
 }
